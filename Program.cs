@@ -33,11 +33,14 @@ namespace ImageListStripper
         list.ImageStream = streamer;
 
         var index = 0;
+        var sourceFileName = Path.GetFileNameWithoutExtension(source);
+
+        Console.WriteLine($"Stripping images from: {source}");
 
         //list is now filled with all the images !
         foreach (Bitmap image in list.Images)
         {
-          var fileName = $"image{index}.bmp";
+          var fileName = $"{sourceFileName}-image-{index}.bmp";
 
           //Got my Bitmap YAY !
           // NOTE:  could alternately be a png or a MemoryBmp
@@ -50,6 +53,8 @@ namespace ImageListStripper
           var imgExtn = GetImageExtension(imgFmt);
           var newFileName = Path.ChangeExtension(fileName, imgExtn);
           File.Move(fileName, newFileName);
+
+          Console.WriteLine($"  {newFileName}");
 
           index++;
         }
