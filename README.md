@@ -55,6 +55,7 @@ Image list data extracted from [MainForm.resx](data/MainForm.resx)
   * [recentDBsDropDownButton.txt](data/recentDBsDropDownButton.txt)
 * support icons
   * [Icon.txt](data/Icon.txt)
+* automatically process .resx file
 
 ## Acknowledgements
 Largely based on code stolen from:
